@@ -5,10 +5,10 @@ body {
 }
 
 textarea {
-  background: transparent;
-  border: none;
+  background: lightgrey;
   resize: none;
   color: #000000;
+  border: none;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -34,6 +34,7 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  justify-content: center;
 }
 
 .hour {
@@ -68,4 +69,8 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+#time{
+  width: 80%;
 }
