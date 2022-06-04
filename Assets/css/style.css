@@ -29,12 +29,8 @@ i{
   white-space: pre-wrap;
 }
 
-.time-block {
-  text-align: center;
-  border-radius: 15px;
-}
 
-.row {
+.input-group {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
@@ -77,4 +73,9 @@ i{
 
 #time{
   width: 80%;
+}
+
+#time-block {
+  text-align: center;
+  border-radius: 15px;
 }
