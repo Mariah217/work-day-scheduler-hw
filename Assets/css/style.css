@@ -38,13 +38,13 @@ i{
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
-  justify-content: center;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding-left: 35px;
 }
 
 .past {
