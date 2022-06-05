@@ -13,9 +13,6 @@ textarea {
   padding: 10px;
 }
 
-i{
-  padding: 7px;
-}
 
 .jumbotron {
   text-align: center;
@@ -29,12 +26,17 @@ i{
   white-space: pre-wrap;
 }
 
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
 
-.input-group {
+.row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
 }
+
 
 .hour {
   background-color: #ffffff;
@@ -69,13 +71,5 @@ i{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
-
-#time{
-  width: 80%;
-}
-
-#time-block {
-  text-align: center;
-  border-radius: 15px;
+  color: darkblue;
 }
