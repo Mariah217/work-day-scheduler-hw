@@ -35,7 +35,7 @@ var time = [ //translates timeblocks to military time
 //function for putting in local storage
 function saveText(event) {
     var id = $(this).attr("data-id"); //event.target is the same as this. whatever button is clicked refers to "this"
-    var value = $("#" + id).val(); //dynamic # picks up the id selector from whichever button is clicked.
+    var value = $("#" + id).val(); //dynamic # picks up the id selector from whichever button is clicked, example 0900, 1200 etc.
     localStorage.setItem(id, value)
 }
 
