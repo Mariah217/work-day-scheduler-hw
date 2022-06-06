@@ -20,7 +20,7 @@ console.log(currentTime);
 
 //variables
 var saveBtn = $(".saveBtn");
-var time = [
+var time = [ //translates timeblocks to military time
     "0900",
     "1000",
     "1100",
@@ -51,11 +51,19 @@ function retreiveText() {
 }
 
 //compare currentTime to timeblocks to determine color of timeblocks (past is gray, present is red and future is green)
-// function color(){
-// for (var i = 0; i < .length; i++) {
-//     if (time === currentTime) {
-//     }
-// }}
+function color(){
+for (var i = 0; i < time.length; i++) {
+    var currentTextEl = $("#" + time)
+    if (currentTime > time[i]) {
+     currentTextEl.addClass("past");
+    }
+    else if (currentTime === time[i]){
+        currentTextEl.addClass("present");
+    }
+    else if (currentTime < time[i]){
+        currentTextEl.addClass("future");
+    }
+}}
 
 //.on click for save btn
 saveBtn.on("click", saveText);
