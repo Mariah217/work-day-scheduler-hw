@@ -4,14 +4,15 @@
 //3. Color coordinate timeblocks for past, present and future.
 //4. Add click event so you can type directly into each box.✔️(used textarea)
 //5. Create save button to save what was typed into textbox next to each textbox.✔️
-//6. Save what was typed into the box into local storage.✔️
-//7. Pull info from local storage and save in textbox.
+//6. Save what was typed into the box into local storage---only works for 9am
+//7. Pull info from local storage and save in textbox.----kinda works
 
 
 //day of the week & date in jumbotron
 var today = moment();
 $("#currentDay").text(today.format("dddd MMMM Do, YYYY"));
 
+//current time to compare to past, present and future times
 var currentTime = moment().format('H');
 console.log();
 
@@ -20,7 +21,14 @@ var pastHour = pastHour < currentTime;
 var presentHour = currentTime;
 var futureHour = futureHour > currentTime;
 
+//saving text in text area, even after refresh
+var timeBlockEl = document.querySelector("#timeblock");
 
+timeBlockEl.value = localStorage.getItem("text");
+
+timeBlockEl.addEventListener("keyup", event => {
+    localStorage.setItem("text", event.target.value);
+})
 
 //save textarea to local storage 
 // only works for one text area, need to figure out how to do it for each individual text area
