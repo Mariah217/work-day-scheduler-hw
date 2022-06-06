@@ -1,52 +1,59 @@
-//Steps:
+//Steps: MUST USE JQUERY
 //1. Display current date in jumbotron. ✔️
 //2. Create timeblocks for each hour in a standard business day 9-5.✔️
 //3. Color coordinate timeblocks for past, present and future.
-//4. Add click event so you can type directly into each box.✔️(used textarea)
+//4. Add click event so you can type directly into each box.✔️
 //5. Create save button to save what was typed into textbox next to each textbox.✔️
-//6. Save what was typed into the box into local storage---only works for 9am
-//7. Pull info from local storage and save in textbox.----kinda works
-
+//6. Save what was typed into the box into local storage when save button clicked✔️
+//7. Pull info from local storage and save in textbox.✔️
 
 //day of the week & date in jumbotron
 var today = moment();
 $("#currentDay").text(today.format("dddd MMMM Do, YYYY"));
 
 //current time to compare to past, present and future times
-var currentTime = moment().format('H');
-console.log();
+var currentTime = moment().hour()
+console.log(currentTime);
 
-//variables:
+//variables
+var saveBtn = $(".saveBtn");
+var textAreaEL = document.querySelector(".textarea");
+var time = [
+    "0900",
+    "1000",
+    "1100",
+    "1200",
+    "1300",
+    "1400",
+    "1500",
+    "1600",
+    "1700"
+]
 
-var time = [{
-    nine: "0900",
-    ten: "1000",
-    eleven:"1100",
-    twelve:"1200",
-    one:"1300",
-    two:"1400",
-    three:"1500",
-    four: "1600",
-    five:"1700",
-},]
-
-
-//saving text in text area, even after refresh-only works for 9am text area
-
-    var timeBlockEl = document.querySelector(".textarea");
-
-    timeBlockEl.value = localStorage.getItem("text");
-    
-    timeBlockEl.addEventListener("keyup", event => {
-        localStorage.setItem("text", event.target.value);
-        console.log(event.target)
-    })
-
-
-//compare currentTime to timeblocks to determine color of timeblocks, use military time
-
-if (time === currentTime){
-    
+//function for putting in local storage
+function saveText(event) {
+    var id = $(this).attr("data-id"); //event.target is the same as this. whatever button is clicked refers to "this"
+    var value = $("#" + id).val(); //dynamic # picks up the id selector from whichever button is clicked.
+    localStorage.setItem(id, value)
 }
 
+//calling retreiveText function
+retreiveText();
 
+//function for parsing local storage 
+function retreiveText() {
+    for (var i = 0; i < time.length; i++){
+        var value = localStorage.getItem(time[i]);
+        $("#" + time[i]).val(value);
+    }
+}
+
+//compare currentTime to timeblocks to determine color of timeblocks (past is gray, present is red and future is green)
+function color(){
+for (var i = 0; i < textAreaEL.clientHeight; i++) {
+    if (time === currentTime) {
+    }
+}}
+
+//.on click for save btn
+saveBtn.on("click", saveText);
