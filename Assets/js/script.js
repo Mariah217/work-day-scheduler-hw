@@ -9,20 +9,30 @@
 
 
 //day of the week & date in jumbotron
-var today = moment();
+var today:moment();
 $("#currentDay").text(today.format("dddd MMMM Do, YYYY"));
 
 //current time to compare to past, present and future times
-var currentTime = moment().format('H');
+var currentTime:moment().format('H');
 console.log();
 
 //variables:
-var pastHour = pastHour < currentTime;
-var presentHour = currentTime;
-var futureHour = futureHour > currentTime;
 
-//saving text in text area, even after refresh
-var timeBlockEl = document.querySelector("#timeblock");
+var time = [{
+    nine: "0900",
+    ten: "1000",
+    eleven:"1100",
+    twelve:"1200",
+    one:"1300",
+    two:"1400",
+    three:"1500",
+    four: "1600",
+    five:"1700",
+},]
+
+
+//saving text in text area, even after refresh-only works for 9am text area
+var timeBlockEl = document.querySelector(".textarea");
 
 timeBlockEl.value = localStorage.getItem("text");
 
@@ -30,22 +40,10 @@ timeBlockEl.addEventListener("keyup", event => {
     localStorage.setItem("text", event.target.value);
 })
 
-//save textarea to local storage 
-// only works for one text area, need to figure out how to do it for each individual text area
-function saveBtnClicked() {
-    document.getElementById("timeblock").value;
-    var timeBlock = document.getElementById("timeblock").value;
-    localStorage.setItem("planner", JSON.stringify(timeBlock));
-    console.log(timeBlock);
+//compare currentTime to timeblocks to determine color of timeblocks, use military time
+
+if (time === currentTime){
+    
 }
 
 
-//compare currentTime to timeblocks to determine color of timeblocks, use military time
-
-
-
-//pull from local storage and save in text area even on refresh
-// function plannerInfo(){
-//     var localStoragePlanner = JSON.parse(localStorage.getItem("planner"));
-//     document.getElementById("timeblock").innerHTML=localStoragePlanner;
-// }
