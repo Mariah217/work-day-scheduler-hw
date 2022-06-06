@@ -9,11 +9,11 @@
 
 
 //day of the week & date in jumbotron
-var today:moment();
+var today = moment();
 $("#currentDay").text(today.format("dddd MMMM Do, YYYY"));
 
 //current time to compare to past, present and future times
-var currentTime:moment().format('H');
+var currentTime = moment().format('H');
 console.log();
 
 //variables:
@@ -32,13 +32,16 @@ var time = [{
 
 
 //saving text in text area, even after refresh-only works for 9am text area
-var timeBlockEl = document.querySelector(".textarea");
 
-timeBlockEl.value = localStorage.getItem("text");
+    var timeBlockEl = document.querySelector(".textarea");
 
-timeBlockEl.addEventListener("keyup", event => {
-    localStorage.setItem("text", event.target.value);
-})
+    timeBlockEl.value = localStorage.getItem("text");
+    
+    timeBlockEl.addEventListener("keyup", event => {
+        localStorage.setItem("text", event.target.value);
+        console.log(event.target)
+    })
+
 
 //compare currentTime to timeblocks to determine color of timeblocks, use military time
 
