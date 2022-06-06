@@ -12,7 +12,7 @@
 
 //day of the week & date in jumbotron
 var today = moment();
-$("#currentDay").text(today.format("dddd MMMM Do, YYYY"));
+$("#currentDay").text(today.format("dddd MMMM Do"));
 
 //current time to compare to past, present and future times
 var currentTime = moment().hour()
