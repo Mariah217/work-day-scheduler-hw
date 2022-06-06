@@ -2,6 +2,9 @@
 //1. Display current date in jumbotron. ✔️
 //2. Create timeblocks for each hour in a standard business day 9-5.✔️
 //3. Color coordinate timeblocks for past, present and future.
+    //if moment() > time-blocks =>past
+    //if moment() == time-blocks =>present
+    //if moment() < time-blocks =>future
 //4. Add click event so you can type directly into each box.✔️
 //5. Create save button to save what was typed into textbox next to each textbox.✔️
 //6. Save what was typed into the box into local storage when save button clicked✔️
@@ -17,7 +20,6 @@ console.log(currentTime);
 
 //variables
 var saveBtn = $(".saveBtn");
-var textAreaEL = document.querySelector(".textarea");
 var time = [
     "0900",
     "1000",
@@ -49,11 +51,11 @@ function retreiveText() {
 }
 
 //compare currentTime to timeblocks to determine color of timeblocks (past is gray, present is red and future is green)
-function color(){
-for (var i = 0; i < textAreaEL.clientHeight; i++) {
-    if (time === currentTime) {
-    }
-}}
+// function color(){
+// for (var i = 0; i < .length; i++) {
+//     if (time === currentTime) {
+//     }
+// }}
 
 //.on click for save btn
 saveBtn.on("click", saveText);
