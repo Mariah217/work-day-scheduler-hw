@@ -2,7 +2,7 @@
 
 ## Description
 
-This Work Day Scheduler allows you to insert your daily tasks in the textareas and save them. The text areas color will change depending on the time for past, present and future.
+This Work Day Scheduler allows you to insert your daily tasks in the textareas and save them. The text areas color will change depending on the time of day. It will change gray when a time block is in the past, it will turn red for the present time block and it will be green for any future time blocks.
 
 During this assignment I learned how to use Jquery and moment(), I was able to practice using for loops, if/else statements and storing information in local storage and retreiving that infomation.
 
@@ -20,7 +20,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 
 ## Credits
-I take credit for my Jquery code and some of the HTML. Part of the HTML code and all of the CSS were provided to us. I also received some help from my instructor Phil Loy.
+I take credit for my Jquery code and some of the HTML. Part of the HTML code and all of the CSS were provided to us. I also received some help from my instructor Phil Loy during office hours.
 
 ## License
 

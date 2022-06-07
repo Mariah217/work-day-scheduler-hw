@@ -20,22 +20,12 @@ console.log(currentTime);
 
 //variables
 var saveBtn = $(".saveBtn");
-var time = [ //translates timeblocks to military time
-    "0900",
-    "1000",
-    "1100",
-    "1200",
-    "1300",
-    "1400",
-    "1500",
-    "1600",
-    "1700"
-]
+var time = [9,10,11,12,13,14,15,16,17] //translates timeblocks to military time
 
 //function for putting in local storage
 function saveText(event) {
     var id = $(this).attr("data-id"); //event.target is the same as this. whatever button is clicked refers to "this"
-    var value = $("#" + id).val(); //dynamic # picks up the id selector from whichever button is clicked, example 0900, 1200 etc.
+    var value = $("#" + id).val(); //dynamic # picks up the id selector from whichever button is clicked
     localStorage.setItem(id, value)
 }
 
@@ -50,18 +40,20 @@ function retreiveText() {
     }
 }
 
-//compare currentTime to timeblocks to determine color of timeblocks (past is gray, present is red and future is green)
+color();
+
+//compare currentTime to timeblocks to determine color of timeblocks (past is gray, present is red and future is green) ????currentTextEL is showing up as undefined in inspect????
 function color(){
-for (var i = 0; i < time.length; i++) {
-    var currentTextEl = $("#" + time)
+for (var i=0; i < time.length; i++) {
+    var currentTextEl = $("#" + time[i]);
     if (currentTime > time[i]) {
      currentTextEl.addClass("past");
     }
-    else if (currentTime === time[i]){
+    else if (currentTime == time[i]){
         currentTextEl.addClass("present");
     }
     else if (currentTime < time[i]){
-        currentTextEl.addClass("future");
+        currentTextEl.addClass("future"); 
     }
 }}
 
