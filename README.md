@@ -2,22 +2,16 @@
 
 ## Description
 
-This Work Day Scheduler allows you to insert your daily tasks in the textareas and save them. The text areas color will change depending on the time of day. It will change gray when a time block is in the past, it will turn red for the present time block and it will be green for any future time blocks.
+This Work Day Scheduler allows you to insert your daily work tasks in the textareas and save them. The text areas color will change depending on the time of day. It will change gray when a time block is in the past, it will turn red for the present time and it will be green for any future time blocks.
 
 During this assignment I learned how to use Jquery and moment(), I was able to practice using for loops, if/else statements and storing information in local storage and retreiving that infomation.
 
 ## Usage
 
-<a href = "live link from github goes here">Click for live link</a>
-![work day scheduler screenshot](link to image here)
+<a href = "https://mariah217.github.io/work-day-scheduler-hw/">Click for live link</a>
 
-Provide instructions and examples for use. Include screenshots as needed.
+![work day scheduler screenshot](./Assets/images/work%20day%20scheduler%20screenshot.PNG)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 I take credit for my Jquery code and some of the HTML. Part of the HTML code and all of the CSS were provided to us. I also received some help from my instructor Phil Loy during office hours.
